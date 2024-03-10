@@ -1,5 +1,5 @@
 ﻿using CatalogMicroservice.Models;
-using CatalogMicroservice.Repositories;
+using CatalogMicroservice.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

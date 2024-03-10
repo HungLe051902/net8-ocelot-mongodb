@@ -1,32 +1,36 @@
-using CatalogMicroservice;
-using Serilog;
-using Serilog.Events;
 
-var builder = Host.CreateDefaultBuilder(args)
-    .ConfigureAppConfiguration((hostingContext, config) =>
+namespace CatalogMicroservice
+{
+    public class Program
     {
-        config
-            .SetBasePath(hostingContext.HostingEnvironment.ContentRootPath)
-            .AddJsonFile("appsettings.json", true, true)
-            .AddJsonFile($"appsettings.{hostingContext.HostingEnvironment.EnvironmentName}.json", true, true)
-            .AddEnvironmentVariables();
-
-        if (hostingContext.HostingEnvironment.EnvironmentName == "Development")
+        public static void Main(string[] args)
         {
-            config.AddJsonFile("appsettings.Local.json", true, true);
-        }
-    })
-    .UseSerilog((_, config) =>
-    {
-        config
-            .MinimumLevel.Information()
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Warning)
-            .Enrich.FromLogContext()
-            .WriteTo.Console();
-    })
-    .ConfigureWebHostDefaults(webBuilder =>
-    {
-        webBuilder.UseStartup<Startup>();
-    });
+            var builder = WebApplication.CreateBuilder(args);
 
-builder.Build().Run();
+            // Add services to the container.
+
+            builder.Services.AddControllers();
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+
+            app.UseAuthorization();
+
+
+            app.MapControllers();
+
+            app.Run();
+        }
+    }
+}

@@ -1,6 +1,6 @@
 ﻿using CatalogMicroservice.Models;
 
-namespace CatalogMicroservice.Repositories
+namespace CatalogMicroservice.Repository
 {
     public interface ICatalogRepository
     {
@@ -9,6 +9,5 @@ namespace CatalogMicroservice.Repositories
         void InsertCatalogItem(CatalogItem catalogItem);
         void UpdateCatalogItem(CatalogItem catalogItem);
         void DeleteCatalogItem(string catagItemId);
-
     }
 }

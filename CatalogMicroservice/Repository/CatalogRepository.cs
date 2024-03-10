@@ -1,12 +1,12 @@
 ﻿using CatalogMicroservice.Models;
 using MongoDB.Driver;
 
-namespace CatalogMicroservice.Repositories
+namespace CatalogMicroservice.Repository
 {
     public class CatalogRepository(IMongoDatabase db) : ICatalogRepository
     {
         private readonly IMongoCollection<CatalogItem> _col =
-                     db.GetCollection<CatalogItem>(CatalogItem.DocumentName);
+                         db.GetCollection<CatalogItem>(CatalogItem.DocumentName);
 
         public IList<CatalogItem> GetCatalogItems() =>
             _col.Find(FilterDefinition<CatalogItem>.Empty).ToList();
