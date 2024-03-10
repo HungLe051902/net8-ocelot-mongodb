@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FF821431-10DE-41D0-9D2F-C21E45E4F597}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AA7B4F0D-6D33-4892-B334-0C0AD31DBF26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gateways", "gateways", "{D2529C0E-F831-4122-8389-FC576108C67B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microservices", "microservices", "{CAED5168-249B-412A-8DC4-EEC5275CD77A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "middlewares", "middlewares", "{F80AF6AB-78BC-4B45-9CB6-755ED1DE98FB}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D2529C0E-F831-4122-8389-FC576108C67B} = {FF821431-10DE-41D0-9D2F-C21E45E4F597}
+		{CAED5168-249B-412A-8DC4-EEC5275CD77A} = {FF821431-10DE-41D0-9D2F-C21E45E4F597}
+		{F80AF6AB-78BC-4B45-9CB6-755ED1DE98FB} = {FF821431-10DE-41D0-9D2F-C21E45E4F597}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2700363-227D-4189-8A2B-2BE3E95D181E}
+	EndGlobalSection
+EndGlobal
